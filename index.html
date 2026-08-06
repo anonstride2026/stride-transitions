@@ -74,6 +74,7 @@
 </footer>
 
 <script>
+const ASSET_VERSION = "20260806b"; // bump to force browsers past cached videos
 const METHODS = [
   { key: "stride",        label: "Ours (STRIDE)", ours: true },
   { key: "dynamicrafter", label: "DynamiCrafter",  ours: false },
@@ -120,7 +121,8 @@ async function load() {
       const src = clip.sources && clip.sources[m.key];
       if (src) {
         const v = document.createElement("video");
-        v.src = src; v.muted = true; v.loop = true; v.autoplay = true;
+        v.src = src + (src.includes("?") ? "&" : "?") + "v=" + ASSET_VERSION;
+        v.muted = true; v.loop = true; v.autoplay = true;
         v.playsInline = true; v.controls = true; v.preload = "metadata";
         cell.appendChild(v);
       } else {
