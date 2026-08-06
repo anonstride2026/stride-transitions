@@ -46,19 +46,19 @@ The videos, `clips.json`, and `captions.json` are **already generated** in this
 folder, so publishing is just: commit anonymously → push → enable Pages.
 
 1. **Create the throwaway GitHub account + empty repo.** Use a fresh email and a
-   pseudonymous username (`anon-stride-2026`). Create an **empty public** repo
+   pseudonymous username (`anonstride2026`). Create an **empty public** repo
    named `stride-transitions` (no auto-README). Do **not** reuse your real account.
 
 2. **Build + push** (from this folder):
    ```bash
-   ./setup_anon_repo.sh https://github.com/anon-stride-2026/stride-transitions.git
+   ./setup_anon_repo.sh https://github.com/anonstride2026/stride-transitions.git
    ```
    The script regenerates `clips.json`, checks file sizes, commits as
    `Anonymous <anonymous@anon.review>` (never your real name), and pushes.
 
 3. **Enable GitHub Pages** on the repo: *Settings → Pages → Deploy from
    branch → `main` / `(root)`*. The gallery goes live at
-   `https://anon-stride-2026.github.io/stride-transitions/` — this is the URL
+   `https://anonstride2026.github.io/stride-transitions/` — this is the URL
    already cited in the paper's supplementary footnote.
 
 > To add/remove clips later: drop the new `.mp4` (same name) into each method
