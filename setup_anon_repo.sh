@@ -6,7 +6,7 @@
 #     ./setup_anon_repo.sh <git-remote-url>      # ...and push to your throwaway account
 #
 #   Example remote (throwaway account you created):
-#     ./setup_anon_repo.sh https://github.com/anon-stride-2026/stride-transitions.git
+#     ./setup_anon_repo.sh https://github.com/anonstride2026/stride-transitions
 #
 # Anonymity guarantees enforced here:
 #   * commit author/committer are set REPO-LOCALLY to "Anonymous" (your global
