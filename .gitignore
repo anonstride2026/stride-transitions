@@ -1,0 +1,10 @@
+# macOS / editor cruft — keep the anonymous repo clean of identifying metadata
+.DS_Store
+._*
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# keep empty method folders tracked until videos are added
+!videos/*/.gitkeep

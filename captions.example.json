@@ -1,0 +1,10 @@
+{
+  "clip01": {
+    "title": "Object morph — same-category subject swap",
+    "caption": "STRIDE holds a single coherent intermediate while baselines cut abruptly."
+  },
+  "clip02": {
+    "title": "Camera motion — panning transition",
+    "caption": "Note the smoother frame-to-frame continuity in Ours."
+  }
+}

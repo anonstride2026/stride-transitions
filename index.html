@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>STRIDE — Qualitative Transition Comparisons (Anonymous Supplement)</title>
+<style>
+  :root {
+    --bg: #0f1115; --panel: #171a21; --line: #262b36;
+    --fg: #e6e9ef; --muted: #9aa4b2; --accent: #6ea8fe;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  header { padding: 28px 20px 8px; max-width: 1200px; margin: 0 auto; }
+  h1 { font-size: 22px; margin: 0 0 6px; }
+  header p { color: var(--muted); margin: 4px 0; max-width: 80ch; }
+  .controls { max-width: 1200px; margin: 12px auto 0; padding: 0 20px; display: flex; gap: 10px; flex-wrap: wrap; }
+  button {
+    background: var(--panel); color: var(--fg); border: 1px solid var(--line);
+    border-radius: 8px; padding: 8px 14px; cursor: pointer; font-size: 14px;
+  }
+  button:hover { border-color: var(--accent); }
+  main { max-width: 1200px; margin: 20px auto 60px; padding: 0 20px; }
+  .clip {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 14px 16px 18px; margin-bottom: 22px;
+  }
+  .clip h2 { font-size: 15px; margin: 0 0 4px; color: var(--fg); }
+  .clip .cap { color: var(--muted); font-size: 13px; margin: 0 0 12px; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  @media (max-width: 820px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  .cell { display: flex; flex-direction: column; }
+  .cell .label {
+    font-size: 12px; font-weight: 600; letter-spacing: .02em; margin: 0 0 6px;
+    color: var(--muted); text-transform: uppercase;
+  }
+  .cell.ours .label { color: var(--accent); }
+  video { width: 100%; border-radius: 8px; background: #000; display: block; aspect-ratio: 1 / 1; object-fit: contain; }
+  .missing {
+    width: 100%; aspect-ratio: 1 / 1; border-radius: 8px; background: #0b0d11;
+    border: 1px dashed var(--line); color: var(--muted); font-size: 12px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  footer { max-width: 1200px; margin: 0 auto 60px; padding: 0 20px; color: var(--muted); font-size: 13px; }
+  code { background: #0b0d11; padding: 1px 5px; border-radius: 4px; }
+  #status { color: var(--muted); padding: 0 20px; max-width: 1200px; margin: 0 auto; }
+</style>
+</head>
+<body>
+<header>
+  <h1>STRIDE — Qualitative Transition Comparisons</h1>
+  <p>Anonymous supplementary material for a double-blind submission. Each row shows the same
+     start&rarr;end transition rendered by four methods from identical boundary frames.
+     <strong>Ours (STRIDE)</strong> is compared against three pretrained-prior baselines.
+     Videos are muted and loop automatically.</p>
+</header>
+
+<div class="controls">
+  <button id="playAll">▶ Play all</button>
+  <button id="pauseAll">⏸ Pause all</button>
+  <button id="restartAll">⟲ Restart all</button>
+</div>
+
+<p id="status">Loading clips…</p>
+<main id="gallery"></main>
+
+<footer>
+  <p>Method order per row: <strong>Ours (STRIDE)</strong> · DynamiCrafter · SEINE · TVG.
+     No author, affiliation, or identifying metadata is included in this repository.</p>
+</footer>
+
+<script>
+const METHODS = [
+  { key: "stride",        label: "Ours (STRIDE)", ours: true },
+  { key: "dynamicrafter", label: "DynamiCrafter",  ours: false },
+  { key: "seine",         label: "SEINE",          ours: false },
+  { key: "tvg",           label: "TVG",            ours: false },
+];
+
+async function load() {
+  const status = document.getElementById("status");
+  let clips;
+  try {
+    const res = await fetch("clips.json", { cache: "no-store" });
+    if (!res.ok) throw new Error(res.status);
+    clips = await res.json();
+  } catch (e) {
+    status.textContent = "Could not load clips.json — run gen_manifest.py after adding videos.";
+    return;
+  }
+  if (!clips.length) { status.textContent = "clips.json is empty — add .mp4 files under videos/ then re-run gen_manifest.py."; return; }
+  status.remove();
+
+  const gallery = document.getElementById("gallery");
+  for (const clip of clips) {
+    const card = document.createElement("section");
+    card.className = "clip";
+    const title = document.createElement("h2");
+    title.textContent = clip.title || clip.id;
+    card.appendChild(title);
+    if (clip.caption) {
+      const cap = document.createElement("p");
+      cap.className = "cap";
+      cap.textContent = clip.caption;
+      card.appendChild(cap);
+    }
+    const grid = document.createElement("div");
+    grid.className = "grid";
+    for (const m of METHODS) {
+      const cell = document.createElement("div");
+      cell.className = "cell" + (m.ours ? " ours" : "");
+      const label = document.createElement("div");
+      label.className = "label";
+      label.textContent = m.label;
+      cell.appendChild(label);
+      const src = clip.sources && clip.sources[m.key];
+      if (src) {
+        const v = document.createElement("video");
+        v.src = src; v.muted = true; v.loop = true; v.autoplay = true;
+        v.playsInline = true; v.controls = true; v.preload = "metadata";
+        cell.appendChild(v);
+      } else {
+        const miss = document.createElement("div");
+        miss.className = "missing";
+        miss.textContent = "(no " + m.label + " clip)";
+        cell.appendChild(miss);
+      }
+      grid.appendChild(cell);
+    }
+    card.appendChild(grid);
+    gallery.appendChild(card);
+  }
+
+  const vids = () => Array.from(document.querySelectorAll("video"));
+  document.getElementById("playAll").onclick   = () => vids().forEach(v => v.play());
+  document.getElementById("pauseAll").onclick  = () => vids().forEach(v => v.pause());
+  document.getElementById("restartAll").onclick= () => vids().forEach(v => { v.currentTime = 0; v.play(); });
+}
+load();
+</script>
+</body>
+</html>
