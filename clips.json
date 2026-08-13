@@ -1,79 +1,13 @@
 [
   {
-    "id": "cam_09",
-    "title": "Camera motion \u2014 clip 09",
-    "caption": "Panning / viewpoint change between the two boundary frames.",
-    "sources": {
-      "stride": "videos/stride/cam_09.mp4",
-      "dynamicrafter": "videos/dynamicrafter/cam_09.mp4",
-      "seine": "videos/seine/cam_09.mp4",
-      "tvg": "videos/tvg/cam_09.mp4"
-    }
-  },
-  {
-    "id": "cam_13",
-    "title": "Camera motion \u2014 clip 13",
-    "caption": "Panning / viewpoint change between the two boundary frames.",
-    "sources": {
-      "stride": "videos/stride/cam_13.mp4",
-      "dynamicrafter": "videos/dynamicrafter/cam_13.mp4",
-      "seine": "videos/seine/cam_13.mp4",
-      "tvg": "videos/tvg/cam_13.mp4"
-    }
-  },
-  {
-    "id": "cam_15",
-    "title": "Camera motion \u2014 clip 15",
-    "caption": "Panning / viewpoint change between the two boundary frames.",
-    "sources": {
-      "stride": "videos/stride/cam_15.mp4",
-      "dynamicrafter": "videos/dynamicrafter/cam_15.mp4",
-      "seine": "videos/seine/cam_15.mp4",
-      "tvg": "videos/tvg/cam_15.mp4"
-    }
-  },
-  {
-    "id": "morph_06",
-    "title": "Object morph \u2014 clip 06",
-    "caption": "Subject transformation between the two boundary frames.",
-    "sources": {
-      "stride": "videos/stride/morph_06.mp4",
-      "dynamicrafter": "videos/dynamicrafter/morph_06.mp4",
-      "seine": "videos/seine/morph_06.mp4",
-      "tvg": "videos/tvg/morph_06.mp4"
-    }
-  },
-  {
-    "id": "morph_09",
-    "title": "Object morph \u2014 clip 09",
-    "caption": "Subject transformation between the two boundary frames.",
-    "sources": {
-      "stride": "videos/stride/morph_09.mp4",
-      "dynamicrafter": "videos/dynamicrafter/morph_09.mp4",
-      "seine": "videos/seine/morph_09.mp4",
-      "tvg": "videos/tvg/morph_09.mp4"
-    }
-  },
-  {
-    "id": "morph_14",
-    "title": "Object morph \u2014 clip 14",
-    "caption": "Subject transformation between the two boundary frames.",
-    "sources": {
-      "stride": "videos/stride/morph_14.mp4",
-      "dynamicrafter": "videos/dynamicrafter/morph_14.mp4",
-      "seine": "videos/seine/morph_14.mp4",
-      "tvg": "videos/tvg/morph_14.mp4"
-    }
-  },
-  {
-    "id": "scene_01",
-    "title": "Scene change \u2014 clip 01",
+    "id": "scene_13",
+    "title": "Scene change \u2014 clip 13",
     "caption": "Cut between two different scenes given as boundary frames.",
     "sources": {
-      "stride": "videos/stride/scene_01.mp4",
-      "dynamicrafter": "videos/dynamicrafter/scene_01.mp4",
-      "seine": "videos/seine/scene_01.mp4",
-      "tvg": "videos/tvg/scene_01.mp4"
+      "stride": "videos/stride/scene_13.mp4",
+      "dynamicrafter": "videos/dynamicrafter/scene_13.mp4",
+      "seine": "videos/seine/scene_13.mp4",
+      "tvg": "videos/tvg/scene_13.mp4"
     }
   },
   {
@@ -88,14 +22,80 @@
     }
   },
   {
-    "id": "scene_13",
-    "title": "Scene change \u2014 clip 13",
+    "id": "scene_01",
+    "title": "Scene change \u2014 clip 01",
     "caption": "Cut between two different scenes given as boundary frames.",
     "sources": {
-      "stride": "videos/stride/scene_13.mp4",
-      "dynamicrafter": "videos/dynamicrafter/scene_13.mp4",
-      "seine": "videos/seine/scene_13.mp4",
-      "tvg": "videos/tvg/scene_13.mp4"
+      "stride": "videos/stride/scene_01.mp4",
+      "dynamicrafter": "videos/dynamicrafter/scene_01.mp4",
+      "seine": "videos/seine/scene_01.mp4",
+      "tvg": "videos/tvg/scene_01.mp4"
+    }
+  },
+  {
+    "id": "morph_14",
+    "title": "Object morph \u2014 clip 14",
+    "caption": "Subject transformation between the two boundary frames.",
+    "sources": {
+      "stride": "videos/stride/morph_14.mp4",
+      "dynamicrafter": "videos/dynamicrafter/morph_14.mp4",
+      "seine": "videos/seine/morph_14.mp4",
+      "tvg": "videos/tvg/morph_14.mp4"
+    }
+  },
+  {
+    "id": "morph_09",
+    "title": "Object morph \u2014 clip 09",
+    "caption": "Subject transformation between the two boundary frames.",
+    "sources": {
+      "stride": "videos/stride/morph_09.mp4",
+      "dynamicrafter": "videos/dynamicrafter/morph_09.mp4",
+      "seine": "videos/seine/morph_09.mp4",
+      "tvg": "videos/tvg/morph_09.mp4"
+    }
+  },
+  {
+    "id": "morph_06",
+    "title": "Object morph \u2014 clip 06",
+    "caption": "Subject transformation between the two boundary frames.",
+    "sources": {
+      "stride": "videos/stride/morph_06.mp4",
+      "dynamicrafter": "videos/dynamicrafter/morph_06.mp4",
+      "seine": "videos/seine/morph_06.mp4",
+      "tvg": "videos/tvg/morph_06.mp4"
+    }
+  },
+  {
+    "id": "cam_15",
+    "title": "Camera motion \u2014 clip 15",
+    "caption": "Panning / viewpoint change between the two boundary frames.",
+    "sources": {
+      "stride": "videos/stride/cam_15.mp4",
+      "dynamicrafter": "videos/dynamicrafter/cam_15.mp4",
+      "seine": "videos/seine/cam_15.mp4",
+      "tvg": "videos/tvg/cam_15.mp4"
+    }
+  },
+  {
+    "id": "cam_13",
+    "title": "Camera motion \u2014 clip 13",
+    "caption": "Panning / viewpoint change between the two boundary frames.",
+    "sources": {
+      "stride": "videos/stride/cam_13.mp4",
+      "dynamicrafter": "videos/dynamicrafter/cam_13.mp4",
+      "seine": "videos/seine/cam_13.mp4",
+      "tvg": "videos/tvg/cam_13.mp4"
+    }
+  },
+  {
+    "id": "cam_09",
+    "title": "Camera motion \u2014 clip 09",
+    "caption": "Panning / viewpoint change between the two boundary frames.",
+    "sources": {
+      "stride": "videos/stride/cam_09.mp4",
+      "dynamicrafter": "videos/dynamicrafter/cam_09.mp4",
+      "seine": "videos/seine/cam_09.mp4",
+      "tvg": "videos/tvg/cam_09.mp4"
     }
   }
 ]
