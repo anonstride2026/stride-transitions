@@ -33,7 +33,7 @@ def stems_in(method: str) -> dict[str, str]:
     found: dict[str, str] = {}
     if not d.is_dir():
         return found
-    for p in sorted(d.iterdir()):
+    for p in sorted(d.iterdir(), reverse=True):
         if p.suffix.lower() in VIDEO_EXTS and not p.name.startswith("."):
             found[p.stem] = f"videos/{method}/{p.name}"
     return found
