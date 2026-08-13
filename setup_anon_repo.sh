@@ -39,6 +39,28 @@ echo "    OK."
 echo "==> Regenerating clips.json from videos/ …"
 python3 gen_manifest.py
 
+# A row missing a method renders as a "(no … clip)" placeholder on the live page, which
+# looks like a broken/withheld comparison to a reviewer. Refuse to publish one unless
+# it is deliberate:  ALLOW_INCOMPLETE=1 ./setup_anon_repo.sh …
+echo "==> Checking every clip has all four methods…"
+if ! python3 - "${ALLOW_INCOMPLETE:-0}" <<'PY'
+import json, sys
+allow = sys.argv[1] == "1"
+methods = ["stride", "dynamicrafter", "seine", "tvg"]
+clips = json.load(open("clips.json"))
+bad = [(c["id"], [m for m in methods if m not in c.get("sources", {})]) for c in clips]
+bad = [(i, miss) for i, miss in bad if miss]
+for i, miss in bad:
+    print(f"    !! {i}: missing {', '.join(miss)}")
+if bad and not allow:
+    print("    Aborting: fill in the missing renders, or re-run with ALLOW_INCOMPLETE=1.")
+    sys.exit(1)
+print("    OK." if not bad else "    ALLOW_INCOMPLETE=1 set — publishing anyway.")
+PY
+then
+  exit 1
+fi
+
 if [ ! -d .git ]; then
   echo "==> git init"
   git init -q

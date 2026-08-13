@@ -1,58 +1,14 @@
 {
-  "cam_01": {
-    "title": "Camera motion \u2014 clip 01",
+  "cam_14": {
+    "title": "Camera motion \u2014 clip 14",
     "caption": "Panning / viewpoint change between the two boundary frames."
-  },
-  "cam_02": {
-    "title": "Camera motion \u2014 clip 02",
-    "caption": "Panning / viewpoint change between the two boundary frames."
-  },
-  "cam_04": {
-    "title": "Camera motion \u2014 clip 04",
-    "caption": "Panning / viewpoint change between the two boundary frames."
-  },
-  "cam_07": {
-    "title": "Camera motion \u2014 clip 07",
-    "caption": "Panning / viewpoint change between the two boundary frames."
-  },
-  "cam_09": {
-    "title": "Camera motion \u2014 clip 09",
-    "caption": "Panning / viewpoint change between the two boundary frames."
-  },
-  "cam_12": {
-    "title": "Camera motion \u2014 clip 12",
-    "caption": "Panning / viewpoint change between the two boundary frames."
-  },
-  "cam_13": {
-    "title": "Camera motion \u2014 clip 13",
-    "caption": "Panning / viewpoint change between the two boundary frames."
-  },
-  "cam_15": {
-    "title": "Camera motion \u2014 clip 15",
-    "caption": "Panning / viewpoint change between the two boundary frames."
-  },
-  "morph_01": {
-    "title": "Object morph \u2014 clip 01",
-    "caption": "Subject transformation between the two boundary frames."
-  },
-  "morph_04": {
-    "title": "Object morph \u2014 clip 04",
-    "caption": "Subject transformation between the two boundary frames."
   },
   "morph_06": {
     "title": "Object morph \u2014 clip 06",
     "caption": "Subject transformation between the two boundary frames."
   },
-  "morph_07": {
-    "title": "Object morph \u2014 clip 07",
-    "caption": "Subject transformation between the two boundary frames."
-  },
   "morph_09": {
     "title": "Object morph \u2014 clip 09",
-    "caption": "Subject transformation between the two boundary frames."
-  },
-  "morph_11": {
-    "title": "Object morph \u2014 clip 11",
     "caption": "Subject transformation between the two boundary frames."
   },
   "morph_12": {
@@ -77,22 +33,6 @@
   },
   "scene_04": {
     "title": "Scene change \u2014 clip 04",
-    "caption": "Cut between two different scenes given as boundary frames."
-  },
-  "scene_06": {
-    "title": "Scene change \u2014 clip 06",
-    "caption": "Cut between two different scenes given as boundary frames."
-  },
-  "scene_11": {
-    "title": "Scene change \u2014 clip 11",
-    "caption": "Cut between two different scenes given as boundary frames."
-  },
-  "scene_13": {
-    "title": "Scene change \u2014 clip 13",
-    "caption": "Cut between two different scenes given as boundary frames."
-  },
-  "scene_14": {
-    "title": "Scene change \u2014 clip 14",
     "caption": "Cut between two different scenes given as boundary frames."
   }
 }
