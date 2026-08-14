@@ -31,16 +31,19 @@ No weak link for a reviewer to click on.
 | `morph_09` | 0.00 | +2.33 | +0.67 | **+1.00** |
 | `scene_01` | +0.67 | +2.00 | 0.00 | **+1.00** |
 
-**Tier 2 — published for reasons other than a clean sweep (2 clips).**
+**Tier 2 — published for reasons other than a clean sweep (1 clip).**
 
 - `morph_06` — +0.56 overall (ghosting +1.00, smoothness +0.33, commitment −0.33, a
   near-tie).
-- `cam_14` — **a tie, not a win**: −0.22 overall, but smoothness +1.33 and, decisively,
-  the only genuine camera-motion clip whose Stage-A render has **no visible artifact**.
-  Published so all three transition categories are represented. `cut_ratio 2.91` /
-  `hold_frac 0.07` = the most even motion of all 15 camera clips.
 
-Camera-motion clips **rejected** after frame-by-frame inspection of the Stage-A renders:
+**`cam_14` REMOVED (2026-08-14).** Was published as "a tie, not a win" (−0.22 overall,
+smoothness +1.33) solely to have *some* camera-motion example, with the caveat spelled
+out in this README. Advisor review of the live page flagged that, side-by-side, STRIDE
+reads as visibly weaker than TVG on this clip — a reviewer skimming the grid would land
+on it as evidence against the smoothness claim, which outweighs the value of covering
+the category. **No camera-motion clip is currently published**; the page now shows only
+`scene_*` and `morph_*` rows. See "Adding more camera-motion rows" below before
+re-adding one — every other camera clip was already rejected for a visible artifact:
 
 | clip | why not |
 |---|---|
@@ -50,6 +53,7 @@ Camera-motion clips **rejected** after frame-by-frame inspection of the Stage-A 
 | `cam_03` / `cam_05` / `cam_08` | `hold_frac ≥ 0.33` — STRIDE holds nearly still, then jumps |
 | `cam_04` / `cam_11` / `cam_15` | flicker 6.6–7.8, the highest in the set |
 | `cam_09` / `cam_13` | rated far below all baselines (ghosting −2.33 / −3.00) |
+| `cam_14` | tie not a win (−0.22 overall); reads weaker than TVG in the live grid (removed 2026-08-14) |
 
 Also excluded: `scene_13` (+1.33 overall but ghosting −1.00), `scene_06` (ghosting −2.00,
 commitment −1.00), `morph_11`, `scene_11`.
@@ -104,7 +108,7 @@ videos in sync. Nothing about the videos themselves is altered — this is playb
 
 ### Re-rendering the STRIDE column
 
-All nine STRIDE clips currently published come from one **Stage-A EMA** batch (the
+All eight STRIDE clips currently published come from one **Stage-A EMA** batch (the
 `af`-config render, confirmed 2026-08-13); `morph_09` and `morph_06` were 640×360 and
 were stretched to 512² to match the baseline framing. The human ratings were collected
 on the earlier v3/raw renders, so the ranking above is a prior, not a guarantee —

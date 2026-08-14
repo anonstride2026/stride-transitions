@@ -86,16 +86,5 @@
       "seine": "videos/seine/morph_06.mp4",
       "tvg": "videos/tvg/morph_06.mp4"
     }
-  },
-  {
-    "id": "cam_14",
-    "title": "Camera motion \u2014 clip 14",
-    "caption": "Panning / viewpoint change between the two boundary frames.",
-    "sources": {
-      "stride": "videos/stride/cam_14.mp4",
-      "dynamicrafter": "videos/dynamicrafter/cam_14.mp4",
-      "seine": "videos/seine/cam_14.mp4",
-      "tvg": "videos/tvg/cam_14.mp4"
-    }
   }
 ]

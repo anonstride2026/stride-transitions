@@ -1,8 +1,4 @@
 {
-  "cam_14": {
-    "title": "Camera motion \u2014 clip 14",
-    "caption": "Panning / viewpoint change between the two boundary frames."
-  },
   "morph_06": {
     "title": "Object morph \u2014 clip 06",
     "caption": "Subject transformation between the two boundary frames."
