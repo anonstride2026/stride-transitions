@@ -12,6 +12,7 @@
 #   * commit author/committer are set REPO-LOCALLY to "Anonymous" (your global
 #     ~/.gitconfig name/email are never used or changed for this repo);
 #   * no author, affiliation, or machine metadata is written.
+
 set -euo pipefail
 cd "$(dirname "$0")"
 

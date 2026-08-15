@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Generate captions.json for the anonymous gallery from the video filenames.
+"""
+@author: Anonymous
+@license: MIT
+@description:
+
+It generates captions.json for the anonymous gallery from the video filenames.
 
 Clip ids follow a neutral, anonymity-safe convention that encodes only the
 transition CATEGORY, never a dataset path or identifying name:
@@ -9,7 +14,9 @@ transition CATEGORY, never a dataset path or identifying name:
     small_NN  -> small-appearance control
 
 Titles/captions are derived purely from that prefix, so this file stays honest
-(no per-clip content descriptions are invented). Re-run after adding clips:
+(no per-clip content descriptions are invented).
+
+Re-run after adding clips:
     python3 make_captions.py && python3 gen_manifest.py
 """
 from __future__ import annotations
@@ -30,6 +37,11 @@ CATEGORIES = {
 
 
 def main() -> None:
+    """
+    Main entry point: generate captions.json for the gallery.
+
+    :return: None
+    """
     caps: dict[str, dict[str, str]] = {}
     for p in sorted(STRIDE_DIR.iterdir()):
         if p.suffix.lower() != ".mp4" or p.name.startswith("."):

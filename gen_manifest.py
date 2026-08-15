@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
-"""Generate clips.json that drives index.html (the side-by-side gallery).
+"""
+@author: Anonymous
+@license: MIT
+@description
 
-Convention: put the SAME filename in each method folder for a given clip, e.g.
+It generates clips.json that drives index.html (the side-by-side gallery).
+
+I follow the convention to put the SAME filename in each method folder for a given clip, e.g.
     videos/stride/clip01.mp4
     videos/dynamicrafter/clip01.mp4
     videos/seine/clip01.mp4
@@ -40,6 +45,11 @@ def stems_in(method: str) -> dict[str, str]:
 
 
 def main() -> None:
+    """
+    Main entry point: generate clips.json for the gallery.
+
+    :return: None
+    """
     per_method = {m: stems_in(m) for m in METHODS}
 
     # Row order: STRIDE first, then any clip that appears in another method only.
